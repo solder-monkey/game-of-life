@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('test_code') {
       steps {
-        sh 'uptime'
+        sh 'mvn clean verify'
       }
     }
   }
