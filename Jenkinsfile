@@ -8,7 +8,9 @@ pipeline {
   stages {
     stage('test_code') {
       steps {
-        sh 'uptime'
+        sh '''uptime
+df -h
+pwd'''
       }
     }
   }
