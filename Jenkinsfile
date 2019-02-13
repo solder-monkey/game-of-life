@@ -8,8 +8,7 @@ pipeline {
   stages {
     stage('test_code') {
       steps {
-        sh 'mvn clean verify'
-        archiveArtifacts '*'
+        build 'verify'
       }
     }
   }
