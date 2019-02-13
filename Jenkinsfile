@@ -8,9 +8,8 @@ pipeline {
   stages {
     stage('test_code') {
       steps {
-        sh '''uptime
-df -h
-pwd'''
+        sh 'mvn clean verify'
+        archiveArtifacts '*'
       }
     }
   }
