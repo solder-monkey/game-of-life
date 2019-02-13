@@ -8,11 +8,10 @@ pipeline {
   stages {
     stage('test_code') {
       steps {
-        sh 'mvn clean verify'
-      }
-    }
-    stage('Archive') {
-      steps {
+        catchError() {
+          sh 'mvn clean verify'
+        }
+
         junit '**/target/surefire-reports/*.xml'
       }
     }
